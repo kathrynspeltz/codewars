@@ -18,8 +18,6 @@ function sortArray(array) {
             array[i] = newVal[0]
         }
     }
-
-
     return (array)
 }
 
