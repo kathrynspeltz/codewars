@@ -10,13 +10,9 @@ reverseInt(-90) === -9;
 */
 
 function reverseInt(n) {
-    let absValue = Math.sign(n)
     let numString = Math.abs(n).toString().split("").reverse().join("")
-    if (absValue == 1)
-        return (Number(numString))
-    else
-        return (Number(numString) * -1)
 
+    return (Number(numString) * Math.sign(n))
 }
 
 console.log(reverseInt(981))
