@@ -7,15 +7,25 @@ Examples:
 
 
 function maxChar(str) {
-    let newDict = {}
+    let newDict = {};
+    let max = 0
+    let maxChar = ""
 
-    for (let character in str) {
+    for (let character of str) {
         if (newDict[character]) {
             newDict[character]++;
         } else {
             newDict[character] = 1;
         }
     }
+
+    for (let character in newDict) {
+        if (newDict[character] > max) {
+            max = newDict[character];
+            maxChar = character;
+        }
+    }
+    return maxChar
 }
 
 module.exports = maxChar;
