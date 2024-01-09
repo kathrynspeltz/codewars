@@ -8,5 +8,13 @@ anagrams('RAIL! SAFETY!', 'fairy tales') === true
 anagrams('Hi there', 'Bye there') === false */
 
 function anagrams(stringA, stringB) {
-
+    let newStringA = stringA.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '').replace(" ", "").split("").sort()
+    let newStringB = stringB.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '').replace(" ", "").split("").sort()
+    console.log(newStringA.toString() == newStringB.toString())
 }
+
+anagrams('rail safety', 'fairy tales')
+anagrams('RAIL! SAFETY!', 'fairy tales')
+anagrams('Hi there', 'Bye there')
+anagrams('hello', 'llohe')
+anagrams('Whoa! Hi!', 'Whoa! Hi!')
