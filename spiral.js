@@ -6,7 +6,16 @@ function matrix(n) {
     for (let i = 0; i < n; i++) {
         spiralMatrix.push([])
     }
-    return spiralMatrix
+    let counter = 1
+    let startColumn = 0
+    let endColumn = n - 1
+    let startRow = 0
+    let endRow = n - 1
+    while (startColumn <= endCOlumn && startRow <= endRow)
+
+
+
+        return spiralMatrix
 }
 
 
