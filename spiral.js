@@ -11,12 +11,34 @@ function matrix(n) {
     let endColumn = n - 1
     let startRow = 0
     let endRow = n - 1
-    while (startColumn <= endCOlumn && startRow <= endRow)
+    while (startColumn <= endColumn && startRow <= endRow) {
 
+        for (let i = startColumn; i <= endColumn; i++) {
+            spiralMatrix[startRow][i] = counter;
+            counter++;
+        }
+        startRow++;
 
+        for (let i = startRow; i <= endRow; i++) {
+            spiralMatrix[i][endColumn] = counter;
+            counter++;
+        }
+        endColumn--;
 
-        return spiralMatrix
+        for (let i = endColumn; i >= startColumn; i--) {
+            spiralMatrix[endRow][i] = counter;
+            counter++;
+        }
+        endRow--;
+
+        for (i = endRow; i >= startRow; i--) {
+            spiralMatrix[i][startColumn] = counter;
+            counter++;
+        }
+        startColumn++
+    }
+
+    return spiralMatrix
 }
-
 
 console.log(matrix(3))
