@@ -7,21 +7,14 @@ class Node {
         this.right = null
     }
 }
-
+//recrusive version
 const treeIncludes = (root, target) => {
-    if (root == null) return false
-    const queue = [root];
-    while (queue.length > 0) {
-        const current = queue.shift();
-        if (current.val == target) {
-            return true
-        }
+    if (root == null) return false;
+    if (root.val == target) return true;
+    return treeIncludes(root.left, target) || treeIncludes(root.right, target)
 
-        if (current.left) queue.push(current.left)
-        if (current.right) queue.push(current.right)
-    }
-    return false
 }
+
 
 const a = new Node('a');
 const b = new Node('b');
@@ -42,4 +35,4 @@ c.right = f;
 //   / \    \
 //  d   e    f
 
-console.log(treeIncludes(a))
+console.log(treeIncludes(a, "e"))
