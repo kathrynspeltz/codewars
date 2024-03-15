@@ -4,16 +4,16 @@ Note: Your answer should always be 6 characters long, the shorthand with 3 will 
 
 function rgb(r, g, b) {
     let hexStr = ""
-    let hexDict = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
+    let hexDict = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
     function convert(x) {
-        if (x == 0) {
+        if (x <= 0) {
             return "00"
         } else if (x > 256) {
             return "FF"
         } else {
             let val1 = Math.floor(x / 16);
             let val2 = ((x / 16) - val1) * 16;
-            return hexDict[val1 - 1] + hexDict[val2 - 1]
+            return hexDict[val1] + hexDict[val2]
         }
     }
     return convert(r) + convert(g) + convert(b);
